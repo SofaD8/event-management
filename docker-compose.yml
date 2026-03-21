@@ -12,6 +12,7 @@ services:
       - "5432:5432"
   web:
     build: .
+    user: "1000:1000"
     container_name: event_web_app
     command: python manage.py runserver 0.0.0.0:8000
     volumes:

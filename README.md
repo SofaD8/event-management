@@ -18,3 +18,63 @@ Readme file
 Bonus Points - 
 Implement an advanced feature like event search or filtering. - 
 Add a feature for sending email notifications to users upon event registration.
+
+
+event-management/
+├── .idea/
+├── .venv/
+├── core/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── apps/
+│   ├── common/
+│   │   ├── __init__.py
+│   │   ├── utils.py
+│   │   ├── pagination.py
+│   │   ├── permissions.py
+│   │   └── exceptions.py
+│   ├── users/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── tests.py
+│   │   └── migrations/
+│   ├── events/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── filters.py
+│   │   ├── tests.py
+│   │   └── migrations/
+│   └── registrations/
+│       ├── __init__.py
+│       ├── admin.py
+│       ├── apps.py
+│       ├── models.py
+│       ├── serializers.py
+│       ├── views.py
+│       ├── urls.py
+│       ├── services.py
+│       ├── tests.py
+│       └── migrations/
+├── manage.py
+├── Dockerfile
+├── docker-compose.yml
+├── .env
+├── .env.sample
+├── .gitignore
+├── .dockerignore
+├── pyproject.toml
+├── poetry.lock
+└── README.md

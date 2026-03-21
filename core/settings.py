@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_filters",
     "drf_spectacular",
+    "apps.users",
+    "apps.events",
+    "apps.registrations",
 ]
 
 MIDDLEWARE = [
@@ -90,6 +93,8 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+
+AUTH_USER_MODEL = "users.User"
 
 
 REST_FRAMEWORK = {
