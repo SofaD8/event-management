@@ -1,6 +1,10 @@
 from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 
 urlpatterns = [
@@ -15,5 +19,16 @@ urlpatterns = [
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="docs"
     ),
+    path(
+        "api/token/",
+        TokenObtainPairView.as_view(),
+        name="token_obtain_pair"),
+    # Ендпоінт для оновлення токена
+    path(
+        "api/token/refresh/",
+        TokenRefreshView.as_view(),
+        name="token_refresh"),
     path("api/events/", include("apps.events.urls")),
+    path("api/registrations/", include("apps.registrations.urls")),
+    path("api/users/", include("apps.users.urls")),
 ]

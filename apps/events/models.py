@@ -1,10 +1,12 @@
 from django.db import models
 from django.conf import settings
 
+from apps.common.models import BaseModel
 
-class Event(models.Model):
+
+class Event(BaseModel):
     title = models.CharField(max_length=255)
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, default="")
     date = models.DateTimeField()
     location = models.CharField(max_length=255)
     organizer = models.ForeignKey(
@@ -12,10 +14,10 @@ class Event(models.Model):
         on_delete=models.CASCADE,
         related_name="organized_events",
     )
-    created_at = models.DateTimeField(auto_now_add=True)
+    capacity = models.PositiveIntegerField(default=100)
 
     class Meta:
-        ordering = ["-created_at"]
+        ordering = ["-date"]
 
     def __str__(self):
         return self.title
