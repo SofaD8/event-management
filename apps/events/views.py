@@ -1,14 +1,10 @@
-from rest_framework import (
-    generics,
-    filters,
-    permissions
-)
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, generics, permissions
 
+from apps.common.pagination import StandardResultsSetPagination
+from apps.common.permissions import IsOrganizerOrReadOnly
 from apps.events.models import Event
 from apps.events.serializers import EventSerializer
-from apps.common.permissions import IsOrganizerOrReadOnly
-from apps.common.pagination import StandardResultsSetPagination
 
 
 class EventListAPIView(generics.ListCreateAPIView):

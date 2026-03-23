@@ -1,8 +1,8 @@
-from django.db import transaction, IntegrityError
+from django.db import IntegrityError, transaction
 
-from apps.users.models import User
 from apps.common.exceptions import UserAlreadyExistsException
 from apps.common.utils import send_app_email
+from apps.users.models import User
 
 
 class UserService:
@@ -18,7 +18,8 @@ class UserService:
 
             send_app_email(
                 subject="Welcome to Event Management!",
-                message=f"Hello! Your account {user.email} has been successfully created.",
+                message=f"Hello! "
+                        f"Your account {user.email} has been successfully created.",
                 recipient_list=[user.email]
             )
             return user

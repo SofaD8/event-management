@@ -1,9 +1,9 @@
 from django.db import transaction
 
-from apps.registrations.models import Registration
-from apps.events.models import Event
 from apps.common.exceptions import EventFullException, UserAlreadyExistsException
 from apps.common.utils import send_app_email
+from apps.events.models import Event
+from apps.registrations.models import Registration
 
 
 @transaction.atomic

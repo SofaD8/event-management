@@ -1,7 +1,6 @@
 from django.urls import path
 
-from apps.events.views import EventListAPIView, EventDetailAPIView
-
+from apps.events.views import EventDetailAPIView, EventListAPIView
 
 urlpatterns = [
     path(
