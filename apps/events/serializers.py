@@ -17,6 +17,7 @@ class EventSerializer(serializers.ModelSerializer):
             "location",
             "organizer",
             "created_at",
+            "capacity",
         )
         read_only_fields = ("id", "organizer")
 
